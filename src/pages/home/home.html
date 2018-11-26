@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-buttons>
+    <button ion-button (click)="goAdduserPage()" col-12>tambah data user</button>
+  </ion-buttons>
+  <ion-list inset>
+    <ion-item *ngFor="let user of users" col-12>
+        <ion-grid>
+            <ion-row>
+              <ion-col col-8><h1>{{user.nama}}</h1></ion-col>
+              
+              <ion-col col-4>
+                  <button ion-button (click)="deleteUser(user.id)" color="danger" clear icon-only >
+                    <ion-icon name='trash' is-active="false"></ion-icon>
+                  </button>
+                </ion-col>
+            </ion-row>
+          </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>
